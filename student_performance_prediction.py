@@ -30,7 +30,7 @@ X = data[
 y = data["final_score"]
 
 
-# 3. Split Dataset into Training and Testing Data
+# 3. Split Dataset
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -39,11 +39,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 
-# 4. Create Machine Learning Model
+# 4. Create Model
 model = LinearRegression()
 
 
-# 5. Train the Model
+# 5. Train Model
 model.fit(X_train, y_train)
 
 print("\nModel trained successfully!")
@@ -64,7 +64,7 @@ print(f"Mean Squared Error: {mse:.2f}")
 print(f"R2 Score: {r2:.2f}")
 
 
-# 8. Compare Actual vs Predicted Scores
+# 8. Compare Actual vs Predicted
 results = pd.DataFrame({
     "Actual Score": y_test.values,
     "Predicted Score": y_pred.round(2)
@@ -74,8 +74,7 @@ print("\nActual vs Predicted:")
 print(results)
 
 
-# 9. Predict Performance of a New Student
-
+# 9. Predict New Student Performance
 study_hours = 8
 attendance = 90
 previous_score = 80
@@ -99,7 +98,6 @@ print(f"Predicted Final Score: {predicted_score:.2f}")
 
 
 # 10. Visualization
-
 plt.figure(figsize=(8, 5))
 
 plt.scatter(y_test, y_pred)
